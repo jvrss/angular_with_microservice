@@ -14,7 +14,11 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  get() {
+  getAll() {
     return this.http.get<Product[]>(`http://localhost:8083/products`);
+  }
+
+  getOne(id) {
+    return this.http.get<Product>(`http://localhost:8083/products/` + id);
   }
 }
